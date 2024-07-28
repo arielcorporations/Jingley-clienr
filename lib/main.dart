@@ -1,24 +1,41 @@
-// main.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_background_service/flutter_background_service.dart';
 
 void main() {
-  runApp(MyApp());
-  FlutterBackgroundService.initialize(onStart);
+  runApp(const MyApp());
 }
 
-void onStart() {
-  // Listen for incoming calls here
-  // Play the jingle ("Greeting.mp3") for the caller
-  // Handle call answering
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});  // Use super parameter
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Jingley',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),  // Added const
+    );
+  }
 }
 
-void onCallAnswered() {
-  stopJingle();
-  FlutterRingtonePlayer.stop();
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});  // Use super parameter
+
+  @override
+  HomePageState createState() => HomePageState();  // Made the private type public
 }
 
-void stopJingle() async {
-  AudioPlayer audioPlayer = AudioPlayer();
-  await audioPlayer.stop();
+class HomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Jingley'),  // Added const
+      ),
+      body: const Center(  // Added const
+        child: Text('Welcome to Jingley!'),  // Added const
+      ),
+    );
+  }
 }
