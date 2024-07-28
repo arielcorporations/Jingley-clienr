@@ -10,10 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^latest_version
-  flutter_background_service: ^latest_version
-  flutter_local_notifications: ^latest_version
-  flutter_ringtone_player: ^latest_version
+  audioplayers: ^6.0.0
+  flutter_background_service: ^5.0.6
+  flutter_local_notifications: ^17.2.1
+  flutter_ringtone_player: ^4.0.0
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
